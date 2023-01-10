@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express"
-import { getLikes } from "./model"
+import { ALL_LIKES } from "./model"
 import JWT from "../../utils/JWT"
+import postgres from "../../utils/postgres"
 
 export const getUserLikes = async(req: Request, res: Response, next: NextFunction) => {
     try {
@@ -10,7 +11,7 @@ export const getUserLikes = async(req: Request, res: Response, next: NextFunctio
             const userId = JWT.verify(auth_token)
 
             if (typeof userId === 'string') {
-               const likes = await getLikes(userId)
+               const likes = await postgres.fetchAll(ALL_LIKES, userId)
             }
 
         }
