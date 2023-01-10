@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE || "postgres://postgres:akmal@localhost/market"
+    connectionString: process.env.DATABASE || "postgres://postgres:akmal@localhost/jamoa"
 })
 
 class PG {
