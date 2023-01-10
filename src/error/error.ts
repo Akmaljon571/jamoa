@@ -1,4 +1,4 @@
-class ErrorHandle {
+export class ErrorHandle {
     public readonly message: string
     public readonly status: number
 

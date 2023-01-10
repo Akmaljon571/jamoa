@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, NextFunction } from "express";
 import routes from "./modules/routes";
 import dotenv from "dotenv"
+import { ErrorHandle } from "./error/error"
 dotenv.config()
 
 const app: Express = express()
@@ -23,7 +24,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     })
 })
 
-app.all("/*", (_: Request, res: Response) => res.sendStatus(404))
+app.all("/*", (_: Request, res: Response) => {
+    console.log('Ok')
+    res.json("ok")
+})
 export {
     app
 }

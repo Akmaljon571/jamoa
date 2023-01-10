@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import Jwt from "jsonwebtoken";
+import { ErrorHandle } from "../../error/error";
 import jwt from "../../utils/JWT"
 import postgres from "../../utils/postgres";
 import { db_dastavkaGet } from "./model";
@@ -9,7 +10,7 @@ export const dastavkaGet = (req: Request, res: Response, next: NextFunction) => 
         const { auth_token } = req.headers
 
         if (typeof auth_token === "string") {
-            const userId: string | Jwt.JwtPayload = jwt.verify(auth_token)
+            const userId = jwt.verify(auth_token)
             console.log(userId)
             if (typeof userId === "string") {
                 const allProduct = postgres.fetchAll(db_dastavkaGet, userId)
