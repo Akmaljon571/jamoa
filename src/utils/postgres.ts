@@ -1,9 +1,10 @@
 import { Pool } from "pg";
 import dotenv from "dotenv"
+import { pgConfig } from "../config/config";
 dotenv.config()
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE || "postgres://postgres:akmal@localhost/market"
+    connectionString: pgConfig || "postgres://postgres:akmal@localhost/jamoa"
 })
 
 class PG {

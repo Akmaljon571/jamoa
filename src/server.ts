@@ -1,5 +1,4 @@
-import a from "./app"
-
-const { app, PORT } = a
+import { app } from "./app"
+import { PORT } from "./config/config"
 
 app.listen(PORT, () => console.log('Server 🚀 in: ' + PORT))
