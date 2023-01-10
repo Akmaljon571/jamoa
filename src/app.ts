@@ -4,7 +4,6 @@ import dotenv from "dotenv"
 dotenv.config()
 
 const app: Express = express()
-const PORT: string | number = process.env.PORT || 2004
 
 app.use(express.json())
 
@@ -25,7 +24,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 })
 
 app.all("/*", (_: Request, res: Response) => res.sendStatus(404))
-export default {
-    app, 
-    PORT
+export {
+    app
 }
