@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, NextFunction } from "express";
 import routes from "./modules/routes";
 import dotenv from "dotenv"
+import { ErrorHandle } from "./error/error";
 dotenv.config()
 
 const app: Express = express()

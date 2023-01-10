@@ -1,6 +1,7 @@
 import { Pool } from "pg";
 import dotenv from "dotenv"
 import { pgConfig } from "../config/config";
+import { ErrorHandle } from "../error/error";
 dotenv.config()
 
 const pool = new Pool({

@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { likeGet } from "./like";
+import { Create_like, DELETE_LIKE, getUserLikes } from "./like";
 
-export default Router()
-    .get("/get", likeGet)
+const likeRouter = Router()
+
+export default likeRouter
+    .get("/getLike", getUserLikes)
+    .post("/createLike", Create_like)
+    .delete('/deleteLike/:likeId', DELETE_LIKE)

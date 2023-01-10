@@ -33,7 +33,7 @@ CREATE TABLE aksia(
     ON DELETE CASCADE,
     foiz int
 );
-
+insert into likes(product_id, user_id) values('348c6ef6-6a8c-4151-9e83-25d9c4497533', '8f4fa8b9-6eff-40e5-b83c-6cb88751bf3b');
 CREATE TABLE likes(
     like_id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     product_id uuid,

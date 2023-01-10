@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import Jwt from "jsonwebtoken";
+import { ErrorHandle } from "../../error/error";
 import jwt from "../../utils/JWT"
 import postgres from "../../utils/postgres";
 import { db_dastavkaGet } from "./model";
