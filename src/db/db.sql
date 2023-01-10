@@ -14,12 +14,6 @@ CREATE TABLE category(
 );
 
 CREATE TABLE product(
-<<<<<<< HEAD
-    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    title varchar(65) not null,
-    price int not null
-);
-=======
     product_id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     product_title varchar not null,
     product_price int not null,
@@ -52,11 +46,12 @@ CREATE TABLE likes(
     ON DELETE CASCADE
 );
 
+drop table if EXISTS karzinka;
 CREATE TABLE karzinka(
     karzinka_id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     product_id uuid,
-    FOREIGN KEY (product_id),
-    REFERENCES product(product_id),
+    FOREIGN KEY (product_id)
+    REFERENCES product(product_id)
     ON DELETE CASCADE,
     user_id uuid,
     FOREIGN KEY (user_id)
@@ -80,4 +75,3 @@ CREATE TABLE dastavka(
     REFERENCES users(user_id)
     ON DELETE CASCADE
 );
->>>>>>> 15c715668c5d94226e3a7029e59cab66dd30e934
