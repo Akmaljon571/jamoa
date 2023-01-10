@@ -14,12 +14,6 @@ CREATE TABLE category(
 );
 
 CREATE TABLE product(
-<<<<<<< HEAD
-    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    title varchar(65) not null,
-    price int not null
-);
-=======
     product_id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     product_title varchar not null,
     product_price int not null,
@@ -80,4 +74,3 @@ CREATE TABLE dastavka(
     REFERENCES users(user_id)
     ON DELETE CASCADE
 );
->>>>>>> 15c715668c5d94226e3a7029e59cab66dd30e934
