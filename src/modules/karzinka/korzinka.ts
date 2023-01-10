@@ -15,6 +15,7 @@ export const getUserLikes = async(req: Request, res: Response, next: NextFunctio
 
         }
     } catch (error) {
-        
+        console.log(error);
+        next(error)
     }
 }
