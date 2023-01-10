@@ -46,11 +46,12 @@ CREATE TABLE likes(
     ON DELETE CASCADE
 );
 
+drop table if EXISTS karzinka;
 CREATE TABLE karzinka(
     karzinka_id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     product_id uuid,
-    FOREIGN KEY (product_id),
-    REFERENCES product(product_id),
+    FOREIGN KEY (product_id)
+    REFERENCES product(product_id)
     ON DELETE CASCADE,
     user_id uuid,
     FOREIGN KEY (user_id)
