@@ -1,3 +1,0 @@
-// alaslkallaa
-
-let a = "ok"
